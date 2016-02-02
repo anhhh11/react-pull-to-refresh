@@ -79,6 +79,7 @@ export default function WebPullToRefresh() {
 	 * @param {object} e - Event object
 	 */
 	var _panStart = function(e) {
+    		bodyClass.add('ptr-start');	
 		pan.startingPositionY = document.body.scrollTop;
 
 		if ( pan.startingPositionY === 0 ) {
@@ -151,6 +152,7 @@ export default function WebPullToRefresh() {
 	 * @param {object} e - Event object
 	 */
 	var _panEnd = function(e) {
+	        bodyClass.remove('ptr-start');
 		if ( ! pan.enabled ) {
 			return;
 		}
